@@ -1,1 +1,44 @@
+// Painel.tsx
+import React from "react"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Card, CardContent } from "@/components/ui/card"
+
+import RedeNeural from "./RedeNeural"
+import Mineracao from "./Mineracao"
+import Inteligencia from "./Inteligencia"
+import Financeiro from "./Financeiro"
+import Hardware from "./Hardware"
+import Estatisticas from "./Estatisticas"
+import Sistema from "./Sistema"
+import Liquidez from "./Liquidez"
+
+export default function Painel() {
+  return (
+    <div className="min-h-screen bg-zinc-950 text-white p-6">
+      <h1 className="text-3xl font-bold mb-6">🧠 Painel da IA Mineradora</h1>
+
+      <Tabs defaultValue="rede-neural" className="w-full">
+        <TabsList className="grid grid-cols-4 gap-2 bg-zinc-900 p-2 rounded-xl mb-4">
+          <TabsTrigger value="rede-neural">Rede Neural</TabsTrigger>
+          <TabsTrigger value="mineracao">Mineração</TabsTrigger>
+          <TabsTrigger value="inteligencia">Inteligência</TabsTrigger>
+          <TabsTrigger value="financeiro">Financeiro</TabsTrigger>
+          <TabsTrigger value="hardware">Hardware</TabsTrigger>
+          <TabsTrigger value="estatisticas">Estatísticas</TabsTrigger>
+          <TabsTrigger value="sistema">Sistema</TabsTrigger>
+          <TabsTrigger value="liquidez">Liquidez</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="rede-neural"><Card><CardContent><RedeNeural /></CardContent></Card></TabsContent>
+        <TabsContent value="mineracao"><Card><CardContent><Mineracao /></CardContent></Card></TabsContent>
+        <TabsContent value="inteligencia"><Card><CardContent><Inteligencia /></CardContent></Card></TabsContent>
+        <TabsContent value="financeiro"><Card><CardContent><Financeiro /></CardContent></Card></TabsContent>
+        <TabsContent value="hardware"><Card><CardContent><Hardware /></CardContent></Card></TabsContent>
+        <TabsContent value="estatisticas"><Card><CardContent><Estatisticas /></CardContent></Card></TabsContent>
+        <TabsContent value="sistema"><Card><CardContent><Sistema /></CardContent></Card></TabsContent>
+        <TabsContent value="liquidez"><Card><CardContent><Liquidez /></CardContent></Card></TabsContent>
+      </Tabs>
+    </div>
+  )
+}
 
